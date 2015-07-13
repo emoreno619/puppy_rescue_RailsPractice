@@ -1,5 +1,6 @@
 <h1>Check out <%= @puppy.name %>!</h1>
 <h2><%= link_to "Edit this puppy", edit_puppy_path %></h2>
+<h2><%= link_to "Delete this puppy", puppy_path, method: :delete %></h2>
 <p>	<%= @puppy.name %></p>
 <p>	<%= @puppy.age %></p>
 <p>	<%= @puppy.breed %></p>

@@ -24,7 +24,7 @@ class PuppiesController < ApplicationController
 
 	def update
 		@puppy = Puppy.find(params[:id])
-		
+
 		if @puppy.update_attributes(puppy_params)
 			redirect_to puppies_path
 		else
@@ -32,8 +32,14 @@ class PuppiesController < ApplicationController
 		end
 	end
 
-	def delete
-		
+	def destroy
+		@puppy = Puppy.find(params[:id])
+		if @puppy.destroy
+			redirect_to puppies_path
+		else
+			render :edit
+		end
+
 	end
 
 	def show
