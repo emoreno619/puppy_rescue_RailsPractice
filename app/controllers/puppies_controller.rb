@@ -6,7 +6,12 @@ class PuppiesController < ApplicationController
 	end
 
 	def create
-		@puppy = Puppy.create(puppy_params)
+		@puppy = Puppy.new(puppy_params)
+		if(@puppy.save)
+			redirect_to puppies_path
+		else
+			render :new
+		end
 	end
 
 	def new
@@ -31,7 +36,7 @@ class PuppiesController < ApplicationController
 
 	private
 		def puppy_params
-			
+			params.require(:puppy).permit(:name,:age,:breed,:image,:bio)
 		end
 
 end
