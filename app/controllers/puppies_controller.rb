@@ -8,7 +8,7 @@ class PuppiesController < ApplicationController
 		
 	end
 	def new
-		
+		@puppy = Puppy.new
 	end
 	def edit
 		
