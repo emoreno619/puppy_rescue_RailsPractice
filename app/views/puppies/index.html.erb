@@ -1,0 +1,11 @@
+<h1>Welcome to Puppy Rescue</h1>
+
+<%=  link_to "Add a Puppy", new_puppy_path %>
+
+<% @puppies.each do |puppy| %>
+		<p>	<%= puppy.name %></p>
+		<p>	<%= puppy.age %></p>
+		<p>	<%= puppy.breed %></p>
+		<p><img src="<%= puppy.image %>" alt=""></p>
+		<p>	<%= puppy.bio %></p>
+<% end %>

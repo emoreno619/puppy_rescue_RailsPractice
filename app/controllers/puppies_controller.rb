@@ -1,7 +1,7 @@
 class PuppiesController < ApplicationController
 	def index
 
-		@puppies = Puppies.all
+		@puppies = Puppy.all
 		
 	end
 	def create
