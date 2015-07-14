@@ -3,7 +3,8 @@
 <h1>Welcome to Puppy Rescue</h1>
 
 <% @puppies.each do |puppy| %>
-		<p>	<h3><a href="/puppies/<%= puppy.id%>"><%= puppy.name %></a></h3></p>
+		<!-- <p>	<h3><a href="/puppies/<%= puppy.id%>"><%= puppy.name %></a></h3></p> -->
+		<p><h3><%= link_to puppy.name, puppy_path(puppy) %></h3></p>
 		<p>	<%= puppy.age %></p>
 		<p>	<%= puppy.breed %></p>
 		<p><img src="<%= puppy.image %>" alt=""></p>
