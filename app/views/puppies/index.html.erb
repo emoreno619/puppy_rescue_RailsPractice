@@ -1,12 +1,16 @@
-<%=  link_to "Add a Puppy", new_puppy_path %>
-
-<h1>Welcome to Puppy Rescue</h1>
-
+<h1>Find your puppy!</h1>
+<div class="content">
 <% @puppies.each do |puppy| %>
 		<!-- <p>	<h3><a href="/puppies/<%= puppy.id%>"><%= puppy.name %></a></h3></p> -->
-		<p><h3><%= link_to puppy.name, puppy_path(puppy) %></h3></p>
-		<p>	<%= puppy.age %></p>
-		<p>	<%= puppy.breed %></p>
-		<p><img src="<%= puppy.image %>" alt=""></p>
-		<p>	<%= puppy.bio %></p>
+		<div class="panel panel-info aPup" style="width: 27%; float: left;">
+            <div class="panel-heading">
+              <h3 class="panel-title"><%= link_to puppy.name, puppy_path(puppy) %></h3>
+            </div>
+            <div class="panel-body">
+              
+              <img style="height: 245px;" src="<%= puppy.image %>" alt="">
+             
+            </div>
+          </div>
 <% end %>
+</div>

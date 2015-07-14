@@ -8,7 +8,7 @@ class PuppiesController < ApplicationController
 	def create
 		@puppy = Puppy.new(puppy_params)
 		if(@puppy.save)
-			redirect_to puppies_path
+			redirect_to puppies_path, flash: {success: "Puppy born!"}
 		else
 			render :new
 		end
@@ -26,7 +26,7 @@ class PuppiesController < ApplicationController
 		@puppy = Puppy.find(params[:id])
 
 		if @puppy.update_attributes(puppy_params)
-			redirect_to puppies_path
+			redirect_to puppies_path, flash: {notice: "Puppy bathed!"}
 		else
 			render :edit
 		end
@@ -35,7 +35,7 @@ class PuppiesController < ApplicationController
 	def destroy
 		@puppy = Puppy.find(params[:id])
 		if @puppy.destroy
-			redirect_to puppies_path
+			redirect_to puppies_path, flash: {alert: "Puppy down!"}
 		else
 			render :edit
 		end
